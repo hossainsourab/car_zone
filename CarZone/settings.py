@@ -40,8 +40,20 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'cars.apps.CarsConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
+    # End My App Installing
+    # Start out features install
     'ckeditor',
-    'django.contrib.humanize'
+    'django.contrib.humanize',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # Providers
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+
 ]
 
 MIDDLEWARE = [
@@ -140,3 +152,15 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 
 }
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = 'dashboard'
+
+# Email functionality
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'infothemegeo@gmail.com'
+EMAIL_HOST_PASSWORD = 'admin!!@@##$$'
+EMAIL_USE_TLS = True
